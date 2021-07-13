@@ -26,53 +26,55 @@ is tagged correctly.
 
 ## Available Images
 
-* [`alpine`](https://github.com/pterodactyl/yolks/tree/master/oses/alpine)
+* [`alpine`](/oses/alpine)
   * `ghcr.io/pterodactyl/yolks:alpine`
-* [`debian`](https://github.com/pterodactyl/yolks/tree/master/oses/debian)
+* [`arma3`](/games/arma3)
+  * `ghcr.io/pterodactyl/games:arma3`
+* [`debian`](/oses/debian)
   * `ghcr.io/pterodactyl/yolks:debian`
-* [`fivem`](https://github.com/pterodactyl/yolks/tree/master/games/fivem)
+* [`fivem`](/games/fivem)
   * `ghcr.io/pterodactyl/games:fivem`
-* [`golang`](https://github.com/pterodactyl/yolks/tree/master/go)
-  * [`go1.14`](https://github.com/pterodactyl/yolks/tree/master/go/1.14)
+* [`golang`](/go)
+  * [`go1.14`](/go/1.14)
     * `ghcr.io/pterodactyl/yolks:go_1.14`
-  * [`go1.15`](https://github.com/pterodactyl/yolks/tree/master/go/1.15)
+  * [`go1.15`](/go/1.15)
     * `ghcr.io/pterodactyl/yolks:go_1.15`
-  * [`go1.16`](https://github.com/pterodactyl/yolks/tree/master/go/1.16)
+  * [`go1.16`](/go/1.16)
     * `ghcr.io/pterodactyl/yolks:go_1.16`
-* [`java`](https://github.com/pterodactyl/yolks/tree/master/java)
-  * [`java7`](https://github.com/pterodactyl/yolks/tree/master/java/7)
+* [`java`](/java)
+  * [`java7`](/java/7)
     * `ghcr.io/pterodactyl/yolks:java_7`
-  * [`java8`](https://github.com/pterodactyl/yolks/tree/master/java/8)
+  * [`java8`](/java/8)
     * `ghcr.io/pterodactyl/yolks:java_8`
-  * [`java9`](https://github.com/pterodactyl/yolks/tree/master/java/9)
+  * [`java9`](/java/9)
     * `ghcr.io/pterodactyl/yolks:java_9`
-  * [`java11`](https://github.com/pterodactyl/yolks/tree/master/java/11)
+  * [`java11`](/java/11)
     * `ghcr.io/pterodactyl/yolks:java_11`
-  * [`java14`](https://github.com/pterodactyl/yolks/tree/master/java/14)
+  * [`java14`](/java/14)
     * `ghcr.io/pterodactyl/yolks:java_14`
-  * [`java16`](https://github.com/pterodactyl/yolks/tree/master/java/16)
+  * [`java16`](/java/16)
     * `ghcr.io/pterodactyl/yolks:java_16`
-* [`nodejs`](https://github.com/pterodactyl/yolks/tree/master/nodejs)
-  * [`node12`](https://github.com/pterodactyl/yolks/tree/master/nodejs/12)
+* [`nodejs`](/nodejs)
+  * [`node12`](/nodejs/12)
     * `ghcr.io/pterodactyl/yolks:nodejs_12`
-  * [`node14`](https://github.com/pterodactyl/yolks/tree/master/nodejs/14)
+  * [`node14`](/nodejs/14)
     * `ghcr.io/pterodactyl/yolks:nodejs_14`
-  * [`node15`](https://github.com/pterodactyl/yolks/tree/master/nodejs/15)
+  * [`node15`](/nodejs/15)
     * `ghcr.io/pterodactyl/yolks:nodejs_15`
-  * [`node16`](https://github.com/pterodactyl/yolks/tree/master/nodejs/16)
+  * [`node16`](/nodejs/16)
     * `ghcr.io/pterodactyl/yolks:nodejs_16`
-* [`python`](https://github.com/pterodactyl/yolks/tree/master/python)
-  * [`python3.7`](https://github.com/pterodactyl/yolks/tree/master/python/3.7)
+* [`python`](/python)
+  * [`python3.7`](/python/3.7)
     * `ghcr.io/pterodactyl/yolks:python_3.7`
-  * [`python3.8`](https://github.com/pterodactyl/yolks/tree/master/python/3.8)
+  * [`python3.8`](/python/3.8)
     * `ghcr.io/pterodactyl/yolks:python_3.8`
-  * [`python3.9`](https://github.com/pterodactyl/yolks/tree/master/python/3.9)
+  * [`python3.9`](/python/3.9)
     * `ghcr.io/pterodactyl/yolks:python_3.9`
 
 ### Installation Images
 
-* [`alpine-install`](https://github.com/pterodactyl/yolks/tree/master/installers/alpine)
+* [`alpine-install`](/installers/alpine)
   * `ghcr.io/pterodactyl/installers:alpine`
 
-* [`source-install`](https://github.com/pterodactyl/yolks/tree/master/installers/source)
+* [`source-install`](/installers/source)
   * `ghcr.io/pterodactyl/installers:source`
