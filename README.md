@@ -30,6 +30,13 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:alpine`
 * [`debian`](/oses/debian)
   * `ghcr.io/parkervcp/yolks:debian`
+* [`erlang`](/erlang)
+  * [`erlang22`](/erlang/22)
+    * `ghcr.io/parkervcp/yolks:erlang_22`
+  * [`erlang23`](/erlang/23)
+    * `ghcr.io/parkervcp/yolks:erlang_23`
+  * [`erlang24`](/erlang/24)
+    * `ghcr.io/parkervcp/yolks:erlang_24`
 * [`games`](/games)  
 	* [`arma3`](/games/arma3)
 	  * `ghcr.io/parkervcp/games:arma3`
