@@ -84,5 +84,5 @@ is tagged correctly.
 * [`alpine-install`](/installers/alpine)
   * `ghcr.io/parkervcp/installers:alpine`
 
-* [`source-install`](/installers/source)
-  * `ghcr.io/parkervcp/installers:source`
+* [`debian-install`](/installers/debian)
+  * `ghcr.io/parkervcp/installers:debian`
