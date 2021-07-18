@@ -81,7 +81,7 @@ is tagged correctly.
   * [`python3.9`](/python/3.9)
     * `ghcr.io/parkervcp/yolks:python_3.9`
 
-### Installation Images
+### [Installation Images](/installers)
 
 * [`alpine-install`](/installers/alpine)
   * `ghcr.io/parkervcp/installers:alpine`
