@@ -25,31 +25,33 @@ When adding a new version to an existing image, such as `java v42`, you'd add it
 is tagged correctly.
 
 ## Available Images
-
-* [`alpine`](/oses/alpine)
+### [Oses](/oses)
+* [alpine](/oses/alpine)
   * `ghcr.io/parkervcp/yolks:alpine`
-* [`debian`](/oses/debian)
+* [debian](/oses/debian)
   * `ghcr.io/parkervcp/yolks:debian`
-* [`erlang`](/erlang)
+### [Erlang](/erlang)
   * [`erlang22`](/erlang/22)
     * `ghcr.io/parkervcp/yolks:erlang_22`
   * [`erlang23`](/erlang/23)
     * `ghcr.io/parkervcp/yolks:erlang_23`
   * [`erlang24`](/erlang/24)
     * `ghcr.io/parkervcp/yolks:erlang_24`
-* [`games`](/games)  
-	* [`arma3`](/games/arma3)
-	  * `ghcr.io/parkervcp/games:arma3`
-	* [`fivem`](/games/fivem)
-	  * `ghcr.io/parkervcp/games:fivem`
-* [`golang`](/go)
+### [Games](/games)  
+  * [`arma3`](/games/arma3)
+    * `ghcr.io/parkervcp/games:arma3`
+  * [`fivem`](/games/fivem)
+	* `ghcr.io/parkervcp/games:fivem`
+  * [`source`](/games/source)
+	* `ghcr.io/parkervcp/games:source`    
+### [Golang](/go)
   * [`go1.14`](/go/1.14)
     * `ghcr.io/parkervcp/yolks:go_1.14`
   * [`go1.15`](/go/1.15)
     * `ghcr.io/parkervcp/yolks:go_1.15`
   * [`go1.16`](/go/1.16)
     * `ghcr.io/parkervcp/yolks:go_1.16`
-* [`java`](/java)
+### [Java](/java)
   * [`java7`](/java/7)
     * `ghcr.io/parkervcp/yolks:java_7`
   * [`java8`](/java/8)
@@ -62,7 +64,7 @@ is tagged correctly.
     * `ghcr.io/parkervcp/yolks:java_14`
   * [`java16`](/java/16)
     * `ghcr.io/parkervcp/yolks:java_16`
-* [`nodejs`](/nodejs)
+### [Nodejs](/nodejs)
   * [`node12`](/nodejs/12)
     * `ghcr.io/parkervcp/yolks:nodejs_12`
   * [`node14`](/nodejs/14)
@@ -71,7 +73,7 @@ is tagged correctly.
     * `ghcr.io/parkervcp/yolks:nodejs_15`
   * [`node16`](/nodejs/16)
     * `ghcr.io/parkervcp/yolks:nodejs_16`
-* [`python`](/python)
+### [Python](/python)
   * [`python3.7`](/python/3.7)
     * `ghcr.io/parkervcp/yolks:python_3.7`
   * [`python3.8`](/python/3.8)
