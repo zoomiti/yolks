@@ -30,6 +30,11 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:alpine`
 * [debian](/oses/debian)
   * `ghcr.io/parkervcp/yolks:debian`
+### [Cassandra](/cassandra)
+  * [`cassandra_java8_python27`](/cassandra/cassandra_java8_python2)
+    * `ghcr.io/parkervcp/yolks:cassandra_java11_python2`
+  * [`cassandra_java11_python3`](/cassandra/cassandra_java11_python3)
+    * `ghcr.io/parkervcp/yolks:cassandra_java11_python3`
 ### [Erlang](/erlang)
   * [`erlang22`](/erlang/22)
     * `ghcr.io/parkervcp/yolks:erlang_22`
