@@ -1,4 +1,4 @@
-name: build software
+name: build cassandra
 on:
   schedule:
     - cron: "0 0 * * 1"
@@ -6,18 +6,17 @@ on:
     branches:
       - master
     paths:
-      - 'software/**'
-
+      - cassandra/**
 jobs:
-  cassandra:
-    name: "software:${{ matrix.cassandra }}"
+  push:
+    name: "yolks:cassandra_${{ matrix.tag }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        cassandra:
-          - cassandra_java11_python2
-          - cassandra_java11_python3
+        tag:
+          - java8_python2
+          - java11_python3
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-buildx-action@v1
@@ -31,11 +30,9 @@ jobs:
           password: ${{ secrets.REGISTRY_TOKEN }}
       - uses: docker/build-push-action@v2
         with:
-          context: ./software/cassandra/${{ matrix.cassandra }}
-          file: ./software/cassandra/${{ matrix.cassandra }}/Dockerfile
+          context: ./cassandra
+          file: ./cassandra/${{ matrix.tag }}/Dockerfile
           platforms: linux/amd64
           push: true
           tags: |
-             ghcr.io/parkervcp/software:${{ matrix.cassandra }}
-
-# Copy a job above and adjust it to enable the build of newly added software
+            ghcr.io/parkervcp/yolks:cassandra_${{ matrix.tag }}
