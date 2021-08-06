@@ -1,4 +1,4 @@
-name: build base
+name: build oses
 on:
   schedule:
     - cron: "0 0 * * 1"
@@ -6,15 +6,16 @@ on:
     branches:
       - master
     paths:
-      - base/**
+      - oses/**
 jobs:
   push:
-    name: "yolks:base_${{ matrix.tag }}"
+    name: "yolks_os:${{ matrix.oses }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        tag:
+        oses:
+          - alpine
           - debian
           - ubuntu
     steps:
@@ -30,9 +31,9 @@ jobs:
           password: ${{ secrets.REGISTRY_TOKEN }}
       - uses: docker/build-push-action@v2
         with:
-          context: ./base/${{ matrix.tag }}
-          file: ./base/${{ matrix.tag }}/Dockerfile
+          context: ./oses/${{ matrix.oses }}
+          file: ./oses/${{ matrix.oses }}/Dockerfile
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/parkervcp/yolks:base_${{ matrix.tag }}
+            ghcr.io/parkervcp/yolks_os:${{ matrix.oses }}

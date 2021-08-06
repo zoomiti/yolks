@@ -1,6 +1,6 @@
 FROM  ubuntu:20.04
 
-LABELauthor="Michael Parker" maintainer="parker@pterodactyl.io"
+LABEL author="Michael Parker" maintainer="parker@pterodactyl.io"
 
 ENV   DEBIAN_FRONTEND noninteractive
 

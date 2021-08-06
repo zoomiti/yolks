@@ -30,6 +30,8 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:alpine`
 * [debian](/oses/debian)
   * `ghcr.io/parkervcp/yolks:debian`
+* [debian](/oses/ubuntu)
+  * `ghcr.io/parkervcp/yolks:ubuntu`  
 ### [Cassandra](/cassandra)
   * [`cassandra_java8_python27`](/cassandra/cassandra_java8_python2)
     * `ghcr.io/parkervcp/yolks:cassandra_java11_python2`
