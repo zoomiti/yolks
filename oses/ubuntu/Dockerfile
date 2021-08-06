@@ -1,4 +1,4 @@
-FROM  ubuntu:20.04
+FROM  ubuntu:18.04
 
 LABEL author="Michael Parker" maintainer="parker@pterodactyl.io"
 
