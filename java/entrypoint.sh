@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 #
 # Copyright (c) 2021 Matthew Penner
@@ -20,7 +20,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-# 
+#
 
 # Default the TZ environment variable to UTC.
 TZ=${TZ:-UTC}
