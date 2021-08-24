@@ -9,7 +9,7 @@ on:
       - oses/**
 jobs:
   push:
-    name: "yolks_os:${{ matrix.oses }}"
+    name: "yolks:${{ matrix.oses }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -36,4 +36,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/parkervcp/yolks_os:${{ matrix.oses }}
+            ghcr.io/parkervcp/yolks:${{ matrix.oses }}
