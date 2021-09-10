@@ -31,7 +31,16 @@ is tagged correctly.
 * [debian](/oses/debian)
   * `ghcr.io/parkervcp/yolks:debian`
 * [ubuntu](/oses/ubuntu)
-  * `ghcr.io/parkervcp/yolks:ubuntu`  
+  * `ghcr.io/parkervcp/yolks:ubuntu`
+### [Bot](/bot)  
+  * [`bastion`](/bot/bastion)
+    * `ghcr.io/parkervcp/yolks:bot_bastion`
+  * [`parkertron`](/bot/parkertron)
+    * `ghcr.io/parkervcp/yolks:bot_parkertron`
+  * [`redbot`](/bot/red)
+    * `ghcr.io/parkervcp/yolks:bot_red`
+  * [`sinusbot`](/bot/sinusbot)
+    * `ghcr.io/parkervcp/yolks:bot_sinusbot`
 ### [Cassandra](/cassandra)
   * [`cassandra_java8_python27`](/cassandra/cassandra_java8_python2)
     * `ghcr.io/parkervcp/yolks:cassandra_java11_python2`
