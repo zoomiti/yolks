@@ -96,7 +96,7 @@ is tagged correctly.
     * `ghcr.io/parkervcp/yolks:python_3.9`
 ### [Voice](/voice)
   * [`TeaSpeak`](/teaspeak)
-    * `ghcr.io/parkervcp/yolks:voice:teaspeak`    
+    * `ghcr.io/parkervcp/yolks:voice_teaspeak`    
 ### [Installation Images](/installers)
 
 * [`alpine-install`](/installers/alpine)
