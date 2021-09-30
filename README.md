@@ -64,9 +64,11 @@ is tagged correctly.
   * [`arma3`](/games/arma3)
     * `ghcr.io/parkervcp/games:arma3`
   * [`fivem`](/games/fivem)
-	* `ghcr.io/parkervcp/games:fivem`
+	  * `ghcr.io/parkervcp/games:fivem`
   * [`source`](/games/source)
-	* `ghcr.io/parkervcp/games:source`    
+	  * `ghcr.io/parkervcp/games:source` 
+  * [`mohaa`](games/mohaa)
+    * `ghcr.io/pterodactyl/games:mohaa`   
 ### [Golang](/go)
   * [`go1.14`](/go/1.14)
     * `ghcr.io/parkervcp/yolks:go_1.14`
