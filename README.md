@@ -103,6 +103,8 @@ is tagged correctly.
     * `ghcr.io/parkervcp/yolks:python_3.8`
   * [`python3.9`](/python/3.9)
     * `ghcr.io/parkervcp/yolks:python_3.9`
+  * [`python3.10`](/python/3.10)
+    * `ghcr.io/parkervcp/yolks:python_3.10`    
 ### [Voice](/voice)
   * [`TeaSpeak`](/teaspeak)
     * `ghcr.io/parkervcp/yolks:voice_teaspeak`    
