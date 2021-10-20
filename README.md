@@ -87,6 +87,8 @@ is tagged correctly.
     * `ghcr.io/parkervcp/yolks:java_14`
   * [`java16`](/java/16)
     * `ghcr.io/parkervcp/yolks:java_16`
+  * [`java16`](/java/17)
+    * `ghcr.io/parkervcp/yolks:java_17`    
 ### [Nodejs](/nodejs)
   * [`node12`](/nodejs/12)
     * `ghcr.io/parkervcp/yolks:nodejs_12`
