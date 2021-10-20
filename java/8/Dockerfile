@@ -1,4 +1,4 @@
-FROM        --platform=$BUILDPLATFORM openjdk:8-slim-buster
+FROM        --platform=$TARGETOS/$TARGETARCH openjdk:8-slim-buster
 
 LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 

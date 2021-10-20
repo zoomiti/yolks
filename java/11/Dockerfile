@@ -1,4 +1,4 @@
-FROM        --platform=$BUILDPLATFORM openjdk:11-slim
+FROM        --platform=$TARGETOS/$TARGETARCH openjdk:11-slim
 
 LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
