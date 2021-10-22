@@ -98,6 +98,8 @@ is tagged correctly.
     * `ghcr.io/parkervcp/yolks:nodejs_15`
   * [`node16`](/nodejs/16)
     * `ghcr.io/parkervcp/yolks:nodejs_16`
+  * [`node16`](/nodejs/17)
+    * `ghcr.io/parkervcp/yolks:nodejs_17`    
 ### [Python](/python)
   * [`python3.7`](/python/3.7)
     * `ghcr.io/parkervcp/yolks:python_3.7`
