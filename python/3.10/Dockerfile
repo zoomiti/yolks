@@ -1,9 +1,9 @@
-FROM        node:15-buster-slim
+FROM        --platform=$TARGETOS/$TARGETARCH python:3.10-slim
 
 LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
 RUN         apt update \
-            && apt -y install ffmpeg iproute2 git sqlite3 libsqlite3-dev python3 python3-dev ca-certificates dnsutils tzdata zip \
+            && apt -y install git gcc g++ ca-certificates dnsutils curl iproute2 ffmpeg procps \
             && useradd -m -d /home/container container
 
 USER        container
@@ -11,4 +11,4 @@ ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
 
 COPY        ./../entrypoint.sh /entrypoint.sh
-CMD         ["/bin/bash", "/entrypoint.sh"]
+CMD         [ "/bin/bash", "/entrypoint.sh" ]

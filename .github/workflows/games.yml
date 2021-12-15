@@ -1,5 +1,6 @@
 name: build games
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 0 * * 1"
   push:
@@ -16,7 +17,6 @@ jobs:
       matrix:
         game:
           - arma3
-          - fivem
           - source
     steps:
       - uses: actions/checkout@v2
