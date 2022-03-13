@@ -19,6 +19,7 @@ jobs:
           - altv
           - arma3
           - source
+          - mohaa
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-buildx-action@v1
@@ -37,4 +38,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-             ghcr.io/parkervcp/games:${{ matrix.game }}
+            ghcr.io/parkervcp/games:${{ matrix.game }}
