@@ -172,6 +172,17 @@ is tagged correctly.
   * [`Redis 6`](/redis/6)
     * `ghcr.io/parkervcp/yolks:redis_6`
 
+### [Rust](/rust)
+
+* ['rust1.31'](/rust/1.31)
+  * `ghcr.io/parkervcp/yolks:rust_1.31`
+* ['rust1.56'](/rust/1.56)
+  * `ghcr.io/parkervcp/yolks:rust_1.56`
+* ['rust1.60'](/rust/1.60)
+  * `ghcr.io/parkervcp/yolks:rust_1.60`
+* ['rust latest'](/rust/latest)
+  * `ghcr.io/parkervcp/yolks:rust_latest`
+
 ### [Voice](/voice)
 
 * [`TeaSpeak`](/teaspeak)
