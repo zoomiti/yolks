@@ -20,7 +20,7 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 ## === ENVIRONMENT VARS ===
-# STARTUP, STARTUP_PARAMS, STEAM_USER, STEAM_PASS, SERVER_BINARY, MOD_FILE, MODIFICATIONS, SERVERMODS, UPDATE_SERVER, CLEAR_CACHE, VALIDATE_SERVER, MODS_LOWERCASE, STEAMCMD_EXTRA_FLAGS, CDLC, STEAMCMD_APPID, HC_NUM, SERVER_PASSWORD, HC_HIDE, STEAMCMD_ATTEMPTS, BASIC_URL, DISABLE_MOD_UPDATES
+# STARTUP, STARTUP_PARAMS, STEAM_USER, STEAM_PASS, SERVER_BINARY, MOD_FILE, MODIFICATIONS, SERVERMODS, OPTIONALMODS, UPDATE_SERVER, CLEAR_CACHE, VALIDATE_SERVER, MODS_LOWERCASE, STEAMCMD_EXTRA_FLAGS, CDLC, STEAMCMD_APPID, HC_NUM, SERVER_PASSWORD, HC_HIDE, STEAMCMD_ATTEMPTS, BASIC_URL, DISABLE_MOD_UPDATES
 
 ## === GLOBAL VARS ===
 # validateServer, extraFlags, updateAttempt, modifiedStartup, allMods, CLIENT_MODS
@@ -28,7 +28,7 @@ NC='\033[0m' # No Color
 ## === DEFINE FUNCTIONS ===
 #
 # Runs SteamCMD with specified variables and performs error handling.
-function RunSteamCMD { #[Input: int server=0 mod=1; int id]
+function RunSteamCMD { #[Input: int server=0 mod=1 optional_mod=2; int id]
     # Clear previous SteamCMD log
     if [[ -f "${STEAMCMD_LOG}" ]]; then
         rm -f "${STEAMCMD_LOG:?}"
@@ -110,7 +110,23 @@ function RunSteamCMD { #[Input: int server=0 mod=1; int id]
                 ModsLowercase @$2
                 # Move any .bikey's to the keys directory
                 echo -e "\tMoving any mod ${CYAN}.bikey${NC} files to the ${CYAN}~/keys/${NC} folder..."
-                find ./@$2 -name "*.bikey" -type f -exec cp {} ./keys \;
+                if [[ $1 == 1 ]]; then
+                    find ./@$2 -name "*.bikey" -type f -exec cp {} ./keys \;
+                else
+                    # Give optional mod keys a custom name which can be checked later for deleting unconfigured mods
+                    for file in $(find ./@$2 -name "*.bikey" -type f); do
+                        filename=$(basename ${file})
+
+                        cp $file ./keys/optional_$2_${filename}
+
+                    done;
+
+                    echo -e "\tMod with ID $2 is an optional mod. Deleting original mod download folder..."
+                    rm -r ./@$2
+
+                    # Recreate a directory so time-based detection of auto updates works correctly
+                    mkdir ./@$2_optional
+                fi
                 echo -e "${GREEN}[UPDATE]: Mod download/update successful!${NC}"
             fi
             break
@@ -183,6 +199,11 @@ if [[ -n ${SERVERMODS} ]] && [[ ${SERVERMODS} != *\; ]]; then # Add server mods 
 else
     allMods=${SERVERMODS}
 fi
+if [[ -n ${OPTIONALMODS} ]] && [[ ${OPTIONALMODS} != *\; ]]; then # Add specified optional mods to the mods list, while checking for trailing semicolon
+    allMods+="${OPTIONALMODS};"
+else
+    allMods+=${OPTIONALMODS}
+fi
 allMods+=$CLIENT_MODS # Add all client-side mods to the master mod list
 CLIENT_MODS=$(RemoveDuplicates ${CLIENT_MODS}) # Remove duplicate mods from CLIENT_MODS, if present
 allMods=$(RemoveDuplicates ${allMods}) # Remove duplicate mods from allMods, if present
@@ -223,16 +244,28 @@ if [[ ${UPDATE_SERVER} == 1 ]]; then
         for modID in $(echo $allMods | sed -e 's/@//g')
         do
             if [[ $modID =~ ^[0-9]+$ ]]; then # Only check mods that are in ID-form
+                # If a mod is defined in OPTIONALMODS, and is not defined in CLIENT_MODS or SERVERMODS, then treat as an optional mod
+                # Optional mods are given a different directory which is checked to see if a new update is available. This is to ensure
+                # if an optional mod is switched to be a standard client-side mod, this script will redownload the mod
+                if [[ "${OPTIONALMODS}" == *"@${modID};"* ]] && [[ "${CLIENT_MODS}" != *"@${modID};"* ]] && [[ "${SERVERMODS}" != *"@${modID};"* ]]; then
+                    modType=2
+                    modDir=@${modID}_optional
+                else
+                    modType=1
+                    modDir=@${modID}
+                fi
+
                 # Get mod's latest update in epoch time from its Steam Workshop changelog page
                 latestUpdate=$(curl -sL https://steamcommunity.com/sharedfiles/filedetails/changelog/$modID | grep '<p id=' | head -1 | cut -d'"' -f2)
+
                 # If the update time is valid and newer than the local directory's creation date, or the mod hasn't been downloaded yet, download the mod
-                if [[ ! -d @$modID ]] || [[ ( -n $latestUpdate ) && ( $latestUpdate =~ ^[0-9]+$ ) && ( $latestUpdate > $(find @$modID | head -1 | xargs stat -c%Y) ) ]]; then
+                if [[ ! -d $modDir ]] || [[ ( -n $latestUpdate ) && ( $latestUpdate =~ ^[0-9]+$ ) && ( $latestUpdate > $(find $modDir | head -1 | xargs stat -c%Y) ) ]]; then
                     # Get the mod's name from the Workshop page as well
                     modName=$(curl -sL https://steamcommunity.com/sharedfiles/filedetails/changelog/$modID | grep 'workshopItemTitle' | cut -d'>' -f2 | cut -d'<' -f1)
                     if [[ -z $modName ]]; then # Set default name if unavailable
                         modName="[NAME UNAVAILABLE]"
                     fi
-                    if [[ ! -d @$modID ]]; then
+                    if [[ ! -d $modDir ]]; then
                         echo -e "\n${GREEN}[UPDATE]:${NC} Downloading new Mod: \"${CYAN}${modName}${NC}\" (${CYAN}${modID}${NC})"
                     else
                         echo -e "\n${GREEN}[UPDATE]:${NC} Mod update found for: \"${CYAN}${modName}${NC}\" (${CYAN}${modID}${NC})"
@@ -241,10 +274,38 @@ if [[ ${UPDATE_SERVER} == 1 ]]; then
                         echo -e "\tMod was last updated: ${CYAN}$(date -d @${latestUpdate})${NC}"
                     fi
                     echo -e "\tAttempting mod update/download via SteamCMD...\n"
-                    RunSteamCMD 1 $modID
+                    
+                    RunSteamCMD $modType $modID
                 fi
             fi
         done
+
+        # Check over key files for unconfigured optional mods' .bikey files
+        for keyFile in $(find ./keys -name "*.bikey" -type f); do
+            keyFileName=$(basename ${keyFile})
+
+            # If the key file is using the optional mod file name
+            if [[ "${keyFileName}" == "optional_"* ]]; then
+                modID=$(echo "${keyFileName}" | cut -d _ -f 2)
+
+                # If mod is not in optional mods, delete it
+                # If a mod is configured in CLIENT_MODS or SERVERMODS, we should still delete this file
+                # as a new file will have been copied that does not follow the naming scheme
+                if [[ "${OPTIONALMODS}" != *"@${modID};"* ]]; then
+
+                    # We only need to let the user know the key file is being deleted if this mod is no longer configured at all.
+                    # If CLIENT_MODS contains the mod ID, we'd just confuse the user by telling them we are deleting the optional .bikey file
+                    if [[ "${CLIENT_MODS}" != *"@${modID};"* ]]; then
+                        echo -e "\tKey file and directory for unconfigured optional mod ${CYAN}${modID}${NC} is being deleted..."
+                    fi
+                    
+                    # Delete the optional mod .bikey file and directory
+                    rm ${keyFile}
+                    rmdir ./@${modID}_optional 2> /dev/null
+                fi
+            fi
+        done;
+
         echo -e "${GREEN}[UPDATE]:${NC} Steam Workshop mod update check ${GREEN}complete${NC}!"
     fi
 fi
