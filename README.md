@@ -140,6 +140,8 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:nodejs_16`
 * [`node17`](/nodejs/17)
   * `ghcr.io/parkervcp/yolks:nodejs_17`
+* [`node18`](/nodejs/18)
+  * `ghcr.io/parkervcp/yolks:nodejs_18`
 
 ### [PostgreSQL](/postgres)
   * [`Postgres 9`](/postgres/9)
