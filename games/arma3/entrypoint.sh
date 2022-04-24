@@ -33,24 +33,24 @@ function RunSteamCMD { #[Input: int server=0 mod=1 optional_mod=2; int id]
     if [[ -f "${STEAMCMD_LOG}" ]]; then
         rm -f "${STEAMCMD_LOG:?}"
     fi
-    
+
     updateAttempt=0
     while (( $updateAttempt < $STEAMCMD_ATTEMPTS )); do # Loop for specified number of attempts
         # Increment attempt counter
         updateAttempt=$((updateAttempt+1))
-        
+
         if (( $updateAttempt > 1 )); then # Notify if not first attempt
             echo -e "\t${YELLOW}Re-Attempting download/update in 3 seconds...${NC} (Attempt ${CYAN}${updateAttempt}${NC} of ${CYAN}${STEAMCMD_ATTEMPTS}${NC})\n"
             sleep 3
         fi
-        
+
         # Check if updating server or mod
         if [[ $1 == 0 ]]; then # Server
             ${STEAMCMD_DIR}/steamcmd.sh +force_install_dir /home/container "+login \"${STEAM_USER}\" \"${STEAM_PASS}\"" +app_update $2 $extraFlags $validateServer +quit | tee -a "${STEAMCMD_LOG}"
         else # Mod
             ${STEAMCMD_DIR}/steamcmd.sh "+login \"${STEAM_USER}\" \"${STEAM_PASS}\"" +workshop_download_item $GAME_ID $2 +quit | tee -a "${STEAMCMD_LOG}"
         fi
-        
+
         # Error checking for SteamCMD
         steamcmdExitCode=${PIPESTATUS[0]}
         if [[ -n $(grep -i "error\|failed" "${STEAMCMD_LOG}" | grep -iv "setlocal\|SDL") ]]; then # Catch errors (ignore setlocale and SDL warnings)
@@ -166,6 +166,11 @@ function RemoveDuplicates { #[Input: str - Output: printf of new str]
 }
 
 # === ENTRYPOINT START ===
+
+# Set environment variable that holds the Internal Docker IP
+INTERNAL_IP=$(ip route get 1 | awk '{print $(NF-2);exit}')
+export INTERNAL_IP
+
 cd /home/container
 sleep 1
 
@@ -213,17 +218,17 @@ allMods=$(echo $allMods | sed -e 's/;/ /g') # Convert from string to array
 if [[ ${UPDATE_SERVER} == 1 ]]; then
     echo -e "\n${GREEN}[STARTUP]: ${CYAN}Starting checks for all updates...${NC}"
     echo -e "(It is okay to ignore any \"SDL\" errors during this process)\n"
-    
+
     ## Update game server
     echo -e "${GREEN}[UPDATE]:${NC} Checking for game server updates with App ID: ${CYAN}${STEAMCMD_APPID}${NC}..."
-    
+
     if [[ ${VALIDATE_SERVER} == 1 ]]; then # Validate will be added as a parameter if specified
         echo -e "\t${CYAN}File validation enabled.${NC} (This may take extra time to complete)"
         validateServer="validate"
     else
         validateServer=""
     fi
-    
+
     # Determine what extra flags should be set
     if [[ -n ${STEAMCMD_EXTRA_FLAGS} ]]; then
         echo -e "\t(${YELLOW}Advanced${NC}) Extra SteamCMD flags specified: ${CYAN}${STEAMCMD_EXTRA_FLAGS}${NC}\n"
@@ -235,9 +240,9 @@ if [[ ${UPDATE_SERVER} == 1 ]]; then
         echo -e ""
         extraFlags=""
     fi
-    
+
     RunSteamCMD 0 ${STEAMCMD_APPID}
-    
+
     ## Update mods
     if [[ -n $allMods ]] && [[ ${DISABLE_MOD_UPDATES} != 1 ]]; then
         echo -e "\n${GREEN}[UPDATE]:${NC} Checking all ${CYAN}Steam Workshop mods${NC} for updates..."
@@ -274,7 +279,7 @@ if [[ ${UPDATE_SERVER} == 1 ]]; then
                         echo -e "\tMod was last updated: ${CYAN}$(date -d @${latestUpdate})${NC}"
                     fi
                     echo -e "\tAttempting mod update/download via SteamCMD...\n"
-                    
+
                     RunSteamCMD $modType $modID
                 fi
             fi
@@ -298,7 +303,7 @@ if [[ ${UPDATE_SERVER} == 1 ]]; then
                     if [[ "${CLIENT_MODS}" != *"@${modID};"* ]]; then
                         echo -e "\tKey file and directory for unconfigured optional mod ${CYAN}${modID}${NC} is being deleted..."
                     fi
-                    
+
                     # Delete the optional mod .bikey file and directory
                     rm ${keyFile}
                     rmdir ./@${modID}_optional 2> /dev/null
