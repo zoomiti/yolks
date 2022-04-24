@@ -140,6 +140,8 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:nodejs_16`
 * [`node17`](/nodejs/17)
   * `ghcr.io/parkervcp/yolks:nodejs_17`
+* [`node18`](/nodejs/18)
+  * `ghcr.io/parkervcp/yolks:nodejs_18`
 
 ### [PostgreSQL](/postgres)
   * [`Postgres 9`](/postgres/9)
@@ -171,6 +173,17 @@ is tagged correctly.
     * `ghcr.io/parkervcp/yolks:redis_5`
   * [`Redis 6`](/redis/6)
     * `ghcr.io/parkervcp/yolks:redis_6`
+
+### [Rust](/rust)
+
+* ['rust1.31'](/rust/1.31)
+  * `ghcr.io/parkervcp/yolks:rust_1.31`
+* ['rust1.56'](/rust/1.56)
+  * `ghcr.io/parkervcp/yolks:rust_1.56`
+* ['rust1.60'](/rust/1.60)
+  * `ghcr.io/parkervcp/yolks:rust_1.60`
+* ['rust latest'](/rust/latest)
+  * `ghcr.io/parkervcp/yolks:rust_latest`
 
 ### [Voice](/voice)
 
