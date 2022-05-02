@@ -19,6 +19,7 @@ jobs:
           - altv
           - arma3
           - source
+          - samp
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-buildx-action@v1

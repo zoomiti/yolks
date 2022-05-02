@@ -81,6 +81,8 @@ is tagged correctly.
   * `ghcr.io/parkervcp/games:arma3`
 * [`source`](/games/source)
   * `ghcr.io/parkervcp/games:source`
+* [`samp`](/games/samp)
+  * `ghcr.io/parkervcp/games:samp`
 
 ### [Golang](/go)
 
