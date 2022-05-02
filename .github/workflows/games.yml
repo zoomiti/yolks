@@ -18,8 +18,9 @@ jobs:
         game:
           - altv
           - arma3
-          - source
           - samp
+          - source
+          
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-buildx-action@v1
