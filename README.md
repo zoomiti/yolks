@@ -79,10 +79,10 @@ is tagged correctly.
   * `ghcr.io/parkervcp/games:altv`
 * [`arma3`](/games/arma3)
   * `ghcr.io/parkervcp/games:arma3`
-* [`source`](/games/source)
-  * `ghcr.io/parkervcp/games:source`
 * [`mohaa`](games/mohaa)
   * `ghcr.io/pterodactyl/games:mohaa`  
+* [`source`](/games/source)
+  * `ghcr.io/parkervcp/games:source`
 
 ### [Golang](/go)
 
