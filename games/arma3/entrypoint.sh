@@ -2,8 +2,8 @@
 
 ## File: Pterodactyl Arma 3 Image - entrypoint.sh
 ## Author: David Wolfe (Red-Thirten)
-## Contributors: Aussie Server Hosts (https://aussieserverhosts.com/)
-## Date: 2021/07/13
+## Contributors: Aussie Server Hosts (https://aussieserverhosts.com/), Stephen White (SilK)
+## Date: 2022/05/22
 ## License: MIT License
 
 ## === CONSTANTS ===
@@ -167,12 +167,15 @@ function RemoveDuplicates { #[Input: str - Output: printf of new str]
 
 # === ENTRYPOINT START ===
 
+# Wait for the container to fully initialize
+sleep 1
+
 # Set environment variable that holds the Internal Docker IP
 INTERNAL_IP=$(ip route get 1 | awk '{print $(NF-2);exit}')
 export INTERNAL_IP
 
-cd /home/container
-sleep 1
+# Switch to the container's working directory
+cd /home/container || exit 1
 
 # Check for old eggs
 if [[ -z ${VALIDATE_SERVER} ]]; then # VALIDATE_SERVER was not in the previous version
@@ -350,15 +353,15 @@ if [[ ! -f ./basic.cfg ]]; then
     curl -sSL ${BASIC_URL} -o ./basic.cfg
 fi
 
-# $NSS_WRAPPER_PASSWD and $NSS_WRAPPER_GROUP have been set by the Dockerfile
+# Setup NSS Wrapper for use ($NSS_WRAPPER_PASSWD and $NSS_WRAPPER_GROUP have been set by the Dockerfile)
 export USER_ID=$(id -u)
 export GROUP_ID=$(id -g)
 envsubst < /passwd.template > ${NSS_WRAPPER_PASSWD}
 
-if [[ ${SERVER_BINARY} == *"x64"* ]]; then # Check which libnss_wrapper architecture to run, based off the server binary name
-    export LD_PRELOAD=/libnss_wrapper_x64.so
+if [[ ${SERVER_BINARY} == *"x64"* ]]; then # Check which libnss-wrapper architecture to run, based off the server binary name
+    export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libnss_wrapper.so
 else
-    export LD_PRELOAD=/libnss_wrapper.so
+    export LD_PRELOAD=/usr/lib/i386-linux-gnu/libnss_wrapper.so
 fi
 
 # Replace Startup Variables
