@@ -18,6 +18,7 @@ jobs:
         game:
           - altv
           - arma3
+          - dayz
           - samp
           - source
           
