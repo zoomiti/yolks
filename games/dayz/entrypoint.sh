@@ -2,7 +2,7 @@
 
 ## File: Pterodactyl DayZ SA Image - entrypoint.sh
 ## Author: David Wolfe (Red-Thirten)
-## Contributors: Aussie Server Hosts (https://aussieserverhosts.com/), Stephen White (SilK)
+## Contributors: Aussie Server Hosts (https://aussieserverhosts.com/)
 ## Date: 2022/05/22
 ## License: MIT License
 
