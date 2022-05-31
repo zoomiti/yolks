@@ -1,5 +1,5 @@
 # ---------------------------------------
-# Generic Wine image based in Wine stable 
+# Generic Wine image based on Wine stable 
 # ---------------------------------------
 FROM    ghcr.io/parkervcp/yolks:debian
 
