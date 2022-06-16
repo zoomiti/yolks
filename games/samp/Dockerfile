@@ -1,4 +1,4 @@
-FROM        --platform=$BUILDPLATFORM debian:bullseye-slim
+FROM        --platform=$TARGETOS/$TARGETARCH debian:bullseye-slim
 
 LABEL       author="QuintenQVD" maintainer="josdekurk@gmail.com"
 

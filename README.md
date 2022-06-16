@@ -79,6 +79,8 @@ is tagged correctly.
   * `ghcr.io/parkervcp/games:altv`
 * [`arma3`](/games/arma3)
   * `ghcr.io/parkervcp/games:arma3`
+* [`dayz`](/games/dayz)
+  * `ghcr.io/parkervcp/games:dayz`
 * [`mohaa`](games/mohaa)
   * `ghcr.io/pterodactyl/games:mohaa`  
 * [`samp`](/games/samp)
