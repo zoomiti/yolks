@@ -46,6 +46,11 @@ is tagged correctly.
 * [`sinusbot`](/bot/sinusbot)
   * `ghcr.io/parkervcp/yolks:bot_sinusbot`
 
+### [Box64](/box64)
+
+* [`Box64`](/box64)
+  * `ghcr.io/parkervcp/yolks:box64`
+
 ### [Cassandra](/cassandra)
 
 * [`cassandra_java8_python27`](/cassandra/cassandra_java8_python2)
