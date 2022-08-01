@@ -19,9 +19,10 @@ jobs:
           - altv
           - arma3
           - dayz
+          - mohaa
           - samp
           - source
-          
+
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-buildx-action@v1
@@ -40,4 +41,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-             ghcr.io/parkervcp/games:${{ matrix.game }}
+            ghcr.io/parkervcp/games:${{ matrix.game }}
