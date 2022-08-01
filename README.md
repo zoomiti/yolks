@@ -93,7 +93,6 @@ is tagged correctly.
 * [`source`](/games/source)
   * `ghcr.io/parkervcp/games:source`
 
-
 ### [Golang](/go)
 
 * [`go1.14`](/go/1.14)
@@ -121,6 +120,7 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:java_17`
 
 ### [MariaDB](/mariadb)
+
   * [`MariaDB 10.3`](/mariadb/10.3)
     * `ghcr.io/parkervcp/yolks:mariadb_10.3`
   * [`MariaDB 10.4`](/mariadb/10.4)
@@ -133,12 +133,14 @@ is tagged correctly.
     * `ghcr.io/parkervcp/yolks:mariadb_10.7`
 
 ### [MongoDB](/mongodb)
+
   * [`MongoDB 4`](/mongodb/4)
     * `ghcr.io/parkervcp/yolks:mongodb_4`
   * [`MongoDB 5`](/mongodb/5)
     * `ghcr.io/parkervcp/yolks:mongodb_5`
 
 ### [Mono](/mono)
+
 * [`mono_latest`](/mono/latest)
   * `ghcr.io/parkervcp/yolks:mono_latest`
 
@@ -156,6 +158,7 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:nodejs_18`
 
 ### [PostgreSQL](/postgres)
+
   * [`Postgres 9`](/postgres/9)
     * `ghcr.io/parkervcp/yolks:postgres_9`
   * [`Postgres 10`](/postgres/10)
@@ -181,10 +184,13 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:python_3.10`
 
 ### [Redis](/redis)
+
   * [`Redis 5`](/redis/5)
     * `ghcr.io/parkervcp/yolks:redis_5`
   * [`Redis 6`](/redis/6)
     * `ghcr.io/parkervcp/yolks:redis_6`
+  * [`Redis 7`](/redis/7)
+    * `ghcr.io/parkervcp/yolks:redis_7`
 
 ### [Rust](/rust)
 
