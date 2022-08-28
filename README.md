@@ -138,6 +138,8 @@ is tagged correctly.
     * `ghcr.io/parkervcp/yolks:mongodb_4`
   * [`MongoDB 5`](/mongodb/5)
     * `ghcr.io/parkervcp/yolks:mongodb_5`
+ * [`MongoDB 6`](/mongodb/6)
+    * `ghcr.io/parkervcp/yolks:mongodb_6`    
 
 ### [Mono](/mono)
 
