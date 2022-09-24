@@ -101,6 +101,12 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:go_1.15`
 * [`go1.16`](/go/1.16)
   * `ghcr.io/parkervcp/yolks:go_1.16`
+* [`go1.17`](/go/1.17)
+  * `ghcr.io/parkervcp/yolks:go_1.17`
+* [`go1.18`](/go/1.18)
+  * `ghcr.io/parkervcp/yolks:go_1.18`
+* [`go1.19`](/go/1.19)
+  * `ghcr.io/parkervcp/yolks:go_1.19`
 
 ### [Java](/java)
 
