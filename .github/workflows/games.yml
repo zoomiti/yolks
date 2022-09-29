@@ -16,9 +16,14 @@ jobs:
       fail-fast: false
       matrix:
         game:
+          - altv
           - arma3
+          - dayz
+          - mohaa
+          - samp
           - source
           - valheim
+          
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-buildx-action@v1
