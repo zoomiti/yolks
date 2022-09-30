@@ -126,6 +126,8 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:java_16`
 * [`java17`](/java/17)
   * `ghcr.io/parkervcp/yolks:java_17`
+* [`java19`](/java/19)
+  * `ghcr.io/parkervcp/yolks:java_19`
 
 ### [MariaDB](/mariadb)
 
@@ -229,3 +231,5 @@ is tagged correctly.
   * `ghcr.io/parkervcp/installers:alpine`
 * [`debian-install`](/installers/debian)
   * `ghcr.io/parkervcp/installers:debian`
+* [`ubuntu-install`](/installers/ubuntu)
+  * `ghcr.io/parkervcp/installers:ubuntu`
