@@ -92,6 +92,8 @@ is tagged correctly.
   * `ghcr.io/parkervcp/games:samp`  
 * [`source`](/games/source)
   * `ghcr.io/parkervcp/games:source`
+* [`valheim`](/games/valheim)
+  * `ghcr.io/parkervcp/games:valheim`
 
 ### [Golang](/go)
 
