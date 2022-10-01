@@ -12,8 +12,6 @@ RUN         apt update \
 			libasound2 libegl1-mesa libglib2.0-0 libnss3 libpci3 libpulse0 libxcursor1 libxslt1.1 libx11-xcb1 libxkbcommon0 bzip2 libxss1 libxcomposite1 \
             && useradd -m -d /home/container container
 
-RUN         curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl \
-            && chmod a+rx /usr/local/bin/youtube-dl
 
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
