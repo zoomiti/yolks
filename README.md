@@ -224,6 +224,7 @@ is tagged correctly.
 
 * [`Wine`](/wine)
   * `ghcr.io/parkervcp/yolks:wine_latest`
+  * `ghcr.io/parkervcp/yolks:wine_staging`
 
 ### [Installation Images](/installers)
 
