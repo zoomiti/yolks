@@ -216,8 +216,9 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:rust_latest`
 
 ### [Voice](/voice)
-
-* [`TeaSpeak`](/teaspeak)
+* [`Mumble`](/voice/mumble)
+  * `ghcr.io/parkervcp/yolks:voice_mumble`
+* [`TeaSpeak`](/voice/teaspeak)
   * `ghcr.io/parkervcp/yolks:voice_teaspeak`
 
 ### [Wine](/wine)
