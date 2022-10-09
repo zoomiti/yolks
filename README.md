@@ -69,6 +69,11 @@ is tagged correctly.
 * [`dotnet6.0`](/dotnet/6)
   * `ghcr.io/parkervcp/yolks:dotnet_6`
 
+### [Dart](/dart)
+
+* [`dart2.17`](/dart/2.17)
+  * `ghcr.io/parkervcp/yolks:dart_2.17`
+
 ### [Erlang](/erlang)
 
 * [`erlang22`](/erlang/22)
