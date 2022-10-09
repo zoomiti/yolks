@@ -9,7 +9,7 @@ on:
     paths:
       - voice/**
 jobs:
-  pushTeaspeak:
+  pushx64:
     name: "yolks:voice_${{ matrix.tag }}"
     runs-on: ubuntu-latest
     strategy:
@@ -37,7 +37,7 @@ jobs:
           tags: |
              ghcr.io/parkervcp/yolks:voice_${{ matrix.tag }}
 
-  pushmumble:
+  pushx64_arm64:
     name: "yolks:voice_${{ matrix.tag }}"
     runs-on: ubuntu-latest
     strategy:
