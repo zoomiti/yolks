@@ -58,6 +58,11 @@ is tagged correctly.
 * [`cassandra_java11_python3`](/cassandra/cassandra_java11_python3)
   * `ghcr.io/parkervcp/yolks:cassandra_java11_python3`
 
+### [Dart](/dart)
+
+* [`dart2.17`](/dart/2.17)
+  * `ghcr.io/parkervcp/yolks:dart_2.17`
+
 ### [dotNet](/dotnet)
 
 * [`dotnet2.1`](/dotnet/2.1)
@@ -68,11 +73,6 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:dotnet_5`
 * [`dotnet6.0`](/dotnet/6)
   * `ghcr.io/parkervcp/yolks:dotnet_6`
-
-### [Dart](/dart)
-
-* [`dart2.17`](/dart/2.17)
-  * `ghcr.io/parkervcp/yolks:dart_2.17`
 
 ### [Erlang](/erlang)
 
