@@ -1,5 +1,5 @@
 # ---------------------------------------
-# Generic Wine image based on Wine stable 
+# Generic Wine image based on Wine staging 
 # ---------------------------------------
 FROM    ghcr.io/parkervcp/yolks:debian
 
@@ -17,7 +17,7 @@ RUN     wget -nc https://dl.winehq.org/wine-builds/winehq.key \
         && wget -O- -q download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_11/Release.key | apt-key add - \
         && echo "deb http://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_11 ./" | tee /etc/apt/sources.list.d/wine-obs.list \
         && apt update \
-		&& apt install -y --install-recommends winehq-stable cabextract
+		&& apt install -y --install-recommends winehq-staging cabextract
 
 # Set up Winetricks
 RUN	    wget -q -O /usr/sbin/winetricks https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks \
