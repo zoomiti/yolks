@@ -9,7 +9,7 @@ RUN         apt update -y \
             && apt install -y apt-transport-https wget iproute2 libgdiplus \
             && wget https://dot.net/v1/dotnet-install.sh \   
             && chmod +x dotnet-install.sh \
-			&& ./dotnet-install.sh -i /usr/share \
+			&& ./dotnet-install.sh -i /usr/share -v 6.0.403 \
             && ln -s /usr/share/dotnet /usr/bin/dotnet
 
 USER        container
