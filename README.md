@@ -73,6 +73,8 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:dotnet_5`
 * [`dotnet6.0`](/dotnet/6)
   * `ghcr.io/parkervcp/yolks:dotnet_6`
+* [`dotnet7.0`](/dotnet/7)
+  * `ghcr.io/parkervcp/yolks:dotnet_7`
 
 ### [Erlang](/erlang)
 
