@@ -1,11 +1,11 @@
-FROM --platform=$TARGETOS/$TARGETARCH alpine:3.9
+FROM --platform=$TARGETOS/$TARGETARCH debian:bullseye
 
 LABEL author="Michael Parker" maintainer="parker@pterodactyl.io"
 
 ENV         DEBIAN_FRONTEND noninteractive
 
 RUN         apt update -y \
-         && apt install -y libtesseract-dev \
+         && apt install -y libtesseract-dev iproute2 \
          && useradd -m -d /home/container container
 
 USER        container
