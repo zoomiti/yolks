@@ -5,7 +5,7 @@ LABEL author="Michael Parker" maintainer="parker@pterodactyl.io"
 ENV         DEBIAN_FRONTEND noninteractive
 
 RUN         apt update -y \
-         && apt install -y libtesseract-dev iproute2 \
+         && apt install -y libtesseract-dev iproute2 ca-certificates \
          && useradd -m -d /home/container container
 
 USER        container
