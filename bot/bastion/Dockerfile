@@ -9,6 +9,7 @@ RUN wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | apt-key add -
  && apt install -y mongodb-org mongodb-org-server mongodb-org-shell mongodb-org-mongos mongodb-org-tools \
  ## install bastion reqs
  && apt install -y python3 build-essential git libtool netcat ffmpeg iproute2 curl tzdata \
+ && npm install -g npm@latest \
  ## add container user
  && useradd -d /home/container -m container -s /bin/bash
 
