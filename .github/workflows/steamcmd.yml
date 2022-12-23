@@ -10,7 +10,7 @@ on:
       - steamcmd/**
 jobs:
   push:
-    name: "games:${{ matrix.distro }}"
+    name: "steamcmd:${{ matrix.distro }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
