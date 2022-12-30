@@ -33,7 +33,7 @@ jobs:
           password: ${{ secrets.REGISTRY_TOKEN }}
       - uses: docker/build-push-action@v3
         with:
-          context: ./steamcmd/${{ matrix.distro }}
+          context: ./steamcmd
           file: ./steamcmd/${{ matrix.distro }}/Dockerfile
           platforms: linux/amd64
           push: true
