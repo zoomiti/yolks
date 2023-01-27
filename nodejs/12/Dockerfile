@@ -7,6 +7,8 @@ RUN         apt update \
             && npm -g install npm@latest \
             && useradd -m -d /home/container container
 
+RUN         npm install npm@latest -g
+
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
