@@ -223,6 +223,8 @@ is tagged correctly.
   * `ghcr.io/parkervcp/steamcmd:debian`
 * [`SteamCMD Debian Dotnet`](/steamcmd/dotnet)
   * `ghcr.io/parkervcp/steamcmd:dotnet`
+* [`SteamCMD Proton`](/steamcmd/proton)
+  * `ghcr.io/parkervcp/steamcmd:proton`
 * [`SteamCMD Ubuntu latest LTS`](/steamcmd/ubuntu)
   * `ghcr.io/parkervcp/steamcmd:ubuntu`
 
