@@ -19,11 +19,11 @@ jobs:
           - altv
           - arma3
           - dayz
+          - minetest          
           - mohaa
           - samp
           - source
           - valheim
-          - minetest
           
     steps:
       - uses: actions/checkout@v3
