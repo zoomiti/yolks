@@ -34,9 +34,16 @@ INTERNAL_IP=$(ip route get 1 | awk '{print $(NF-2);exit}')
 export INTERNAL_IP
 
 # Set environment for Steam Proton
-mkdir -p /home/container/.steam/steam/steamapps/compatdata/${SRCDS_APPID}
-export STEAM_COMPAT_CLIENT_INSTALL_PATH="/home/container/.steam/steam"
-export STEAM_COMPAT_DATA_PATH="/home/container/.steam/steam/steamapps/compatdata/${SRCDS_APPID}"
+if [ -f "/usr/local/bin/proton" ]; then
+    if [ ! -z ${SRCDS_APPID} ]; then
+	    mkdir -p /home/container/.steam/steam/steamapps/compatdata/${SRCDS_APPID}
+        export STEAM_COMPAT_CLIENT_INSTALL_PATH="/home/container/.steam/steam"
+        export STEAM_COMPAT_DATA_PATH="/home/container/.steam/steam/steamapps/compatdata/${SRCDS_APPID}"
+    else
+        echo -e "No appid set. Stopping server"
+        exit 1
+        fi
+fi
 
 # Switch to the container's working directory
 cd /home/container || exit 1
