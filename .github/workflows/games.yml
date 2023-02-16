@@ -19,7 +19,7 @@ jobs:
           - altv
           - arma3
           - dayz
-          - minetest          
+          - minetest                  
           - mohaa
           - samp
           - source
