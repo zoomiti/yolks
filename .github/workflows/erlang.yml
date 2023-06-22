@@ -35,7 +35,7 @@ jobs:
         with:
           context: ./erlang
           file: ./erlang/${{ matrix.tag }}/Dockerfile
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: |
             ghcr.io/parkervcp/yolks:erlang_${{ matrix.tag }}
