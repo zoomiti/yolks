@@ -43,7 +43,7 @@ jobs:
           tags: |
             ghcr.io/parkervcp/games:${{ matrix.game }}
   pushAll:
-    name: "games_All:${{ matrix.tag }}"
+    name: "games_All:${{ matrix.game }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
