@@ -19,7 +19,7 @@ RUN             apt update
 RUN             apt install --install-recommends winehq-devel cabextract wine-binfmt -y
 
 # Set up Winetricks
-RUN	        wget -q -O /usr/sbin/winetricks https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks \
+RUN	            wget -q -O /usr/sbin/winetricks https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks \
                 && chmod +x /usr/sbin/winetricks
 
 ENV             HOME=/home/container
@@ -31,12 +31,6 @@ ENV             DISPLAY_HEIGHT=768
 ENV             DISPLAY_DEPTH=16
 ENV             AUTO_UPDATE=1
 ENV             XVFB=1
-
-## Setup user and working directory
-RUN             useradd -m -d /home/container -s /bin/bash container
-USER            container
-ENV             USER=container HOME=/home/container
-WORKDIR         /home/container
 
 COPY            ./../entrypoint.sh /entrypoint.sh
 CMD             [ "/bin/bash", "/entrypoint.sh" ]
