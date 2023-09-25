@@ -35,6 +35,11 @@ is tagged correctly.
 * [ubuntu](/oses/ubuntu)
   * `ghcr.io/parkervcp/yolks:ubuntu`
 
+### [Apps](/apps)
+
+* [`uptimekuma`](/apps/uptimekuma)
+  * `ghcr.io/parkervcp/yolks:apps_uptimekuma`
+
 ### [Bot](/bot)
 
 * [`bastion`](/bot/bastion)
