@@ -33,7 +33,8 @@ RUN           apt update \
                      libexpat1-dev \
                      liblzma-dev \
                      ffmpeg \
-                     imagemagick
+                     imagemagick \
+					 tini
 
 RUN           pip install --upgrade pip
 RUN           pip install python-forecastio tweepy unidecode discord-text-sanitizer mcstatus bs4 sqlalchemy geocoder valve python-valve py-cpuinfo psutil
