@@ -229,6 +229,8 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:python_3.10`
 * [`python3.11`](/python/3.11)
   * `ghcr.io/parkervcp/yolks:python_3.11`
+* [`python3.12`](/python/3.12)
+  * `ghcr.io/parkervcp/yolks:python_3.12`
 
 ### [Redis](/redis)
 
