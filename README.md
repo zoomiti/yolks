@@ -143,6 +143,10 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:go_1.18`
 * [`go1.19`](/go/1.19)
   * `ghcr.io/parkervcp/yolks:go_1.19`
+* [`go1.20`](/go/1.20)
+  * `ghcr.io/parkervcp/yolks:go_1.20`
+* [`go1.21`](/go/1.21)
+  * `ghcr.io/parkervcp/yolks:go_1.21`
 
 ### [Java](/java)
 
