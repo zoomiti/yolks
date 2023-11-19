@@ -251,8 +251,6 @@ is tagged correctly.
 
 ### [Rust](/rust)
 
-* ['rust1.31'](/rust/1.31)
-  * `ghcr.io/parkervcp/yolks:rust_1.31`
 * ['rust1.56'](/rust/1.56)
   * `ghcr.io/parkervcp/yolks:rust_1.56`
 * ['rust1.60'](/rust/1.60)
