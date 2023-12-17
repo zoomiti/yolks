@@ -186,6 +186,8 @@ is tagged correctly.
     * `ghcr.io/parkervcp/yolks:mongodb_5`
  * [`MongoDB 6`](/mongodb/6)
     * `ghcr.io/parkervcp/yolks:mongodb_6`    
+ * [`MongoDB 7`](/mongodb/7)
+    * `ghcr.io/parkervcp/yolks:mongodb_7`
 
 ### [Mono](/mono)
 
