@@ -177,6 +177,8 @@ is tagged correctly.
     * `ghcr.io/parkervcp/yolks:mariadb_10.6`
   * [`MariaDB 10.7`](/mariadb/10.7)
     * `ghcr.io/parkervcp/yolks:mariadb_10.7`
+  * [`MariaDB 11.2`](/mariadb/11.2)
+    * `ghcr.io/parkervcp/yolks:mariadb_11.2`
 
 ### [MongoDB](/mongodb)
 
