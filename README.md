@@ -210,7 +210,8 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:nodejs_19`
 * [`node20`](/nodejs/20)
   * `ghcr.io/parkervcp/yolks:nodejs_20`
-
+* [`node21`](/nodejs/21)
+  * `ghcr.io/parkervcp/yolks:nodejs_21`
 
 ### [PostgreSQL](/postgres)
 
