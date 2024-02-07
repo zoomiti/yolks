@@ -151,6 +151,8 @@ is tagged correctly.
   * `ghcr.io/parkervcp/yolks:go_1.20`
 * [`go1.21`](/go/1.21)
   * `ghcr.io/parkervcp/yolks:go_1.21`
+* [`go1.22`](/go/1.22)
+  * `ghcr.io/parkervcp/yolks:go_1.22`
 
 ### [Java](/java)
 
