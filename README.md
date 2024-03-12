@@ -274,6 +274,8 @@ is tagged correctly.
   * `ghcr.io/parkervcp/steamcmd:dotnet`
 * [`SteamCMD Proton`](/steamcmd/proton)
   * `ghcr.io/parkervcp/steamcmd:proton`
+* [`SteamCMD Proton`](/steamcmd/proton_8)
+  * `ghcr.io/parkervcp/steamcmd:proton_8`
 * [`SteamCMD Sniper latest`](/steamcmd/sniper)
   * `ghcr.io/parkervcp/steamcmd:sniper`
 * [`SteamCMD Ubuntu latest LTS`](/steamcmd/ubuntu)
