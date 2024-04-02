@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH mongo:6-jammy
+FROM        --platform=$TARGETOS/$TARGETARCH mongo:7-jammy
 
 LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
