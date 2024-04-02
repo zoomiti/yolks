@@ -23,6 +23,9 @@ RUN         apk add --no-cache \
                 iproute2 \
                 iputils-ping \
                 libtool \
+                musl \
+                musl-utils \
+                musl-locales \
                 python3 \
                 python3-dev \
                 py3-pip \
