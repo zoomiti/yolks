@@ -26,6 +26,7 @@ RUN         apk add --no-cache \
                 python3 \
                 python3-dev \
                 py3-pip \
+                pipx \
                 sqlite \
                 tzdata \
                 zip \
@@ -42,7 +43,7 @@ RUN         if [ "$TARGETPLATFORM" = "linux/amd64" ]; then ARCHITECTURE=amd64; e
 RUN         chmod +x /usr/bin/cloudflared
 
 # install apprise
-RUN         pip install apprise
+RUN         pipx install apprise
 
 ## Setup user and working directory
 RUN         adduser -D -h /home/container container -s /bin/bash container
