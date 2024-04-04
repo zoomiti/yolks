@@ -29,7 +29,9 @@ RUN         if [ "$(uname -m)" = "x86_64" ]; then \
                 dpkg -i libicu66_66.1-2ubuntu2.1_amd64.deb && \
                 dkpk -i libssl1.1_1.1.0g-2ubuntu4_amd64.deb
                 rm libicu66_66.1-2ubuntu2.1_amd64.deb libssl1.1_1.1.0g-2ubuntu4_amd64.deb; \
-            else \
+            fi
+# ARM64
+RUN         if [ ! "$(uname -m)" = "x86_64" ]; then \
                 wget http://ports.ubuntu.com/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_arm64.deb && \
                 dpkg -i libssl1.1_1.1.1f-1ubuntu2_arm64.deb && \
                 rm libssl1.1_1.1.1f-1ubuntu2_arm64.deb; \
