@@ -41,6 +41,13 @@ RUN         cd /tmp/ \
             && tar xvf rcon.tar.gz \
             && mv rcon-0.10.3-amd64_linux/rcon /usr/local/bin/
 
+        # Temp fix for things that still need libssl1.1
+RUN     if [ "$(uname -m)" = "x86_64" ]; then \
+            wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb && \
+            dpkg -i libssl1.1_1.1.0g-2ubuntu4_amd64.deb && \
+            rm libssl1.1_1.1.0g-2ubuntu4_amd64.deb; \
+        fi
+        
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
