@@ -138,6 +138,8 @@ is tagged correctly.
   * `ghcr.io/parkervcp/games:samp`  
 * [`source`](/games/source)
   * `ghcr.io/parkervcp/games:source`
+* [`thebattleforwesnoth`](/games/thebattleforwesnoth)
+  * `ghcr.io/parkervcp/games:thebattleforwesnoth`
 * [`valheim`](/games/valheim)
   * `ghcr.io/parkervcp/games:valheim`
 

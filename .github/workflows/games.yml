@@ -23,6 +23,7 @@ jobs:
           - samp
           - source
           - valheim
+          - thebattleforwesnoth
           
     steps:
       - uses: actions/checkout@v4
